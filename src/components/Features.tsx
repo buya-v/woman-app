@@ -1,50 +1,64 @@
 import React from 'react';
-import { CalendarHeart, Activity, Users, ShieldCheck } from 'lucide-react';
-import { FeatureCard } from './FeatureCard';
+import { CalendarHeart, Activity, Users, ShieldCheck, HeartPulse, Bell } from 'lucide-react';
+
+const features = [
+  {
+    icon: <CalendarHeart className="w-8 h-8 text-primary" />,
+    title: "Cycle Tracking",
+    description: "Precise prediction algorithms for menstruation and ovulation windows tailored to your unique rhythm."
+  },
+  {
+    icon: <Activity className="w-8 h-8 text-primary" />,
+    title: "Health Insights",
+    description: "Visualize your health trends with easy-to-read charts covering sleep, mood, and symptom patterns."
+  },
+  {
+    icon: <Users className="w-8 h-8 text-primary" />,
+    title: "Community Support",
+    description: "Join safe, moderated forums to discuss women's health topics with peers and experts."
+  },
+  {
+    icon: <ShieldCheck className="w-8 h-8 text-primary" />,
+    title: "Privacy First",
+    description: "Your intimate data is encrypted and stored securely. We never sell your personal health information."
+  },
+  {
+    icon: <HeartPulse className="w-8 h-8 text-primary" />,
+    title: "Wellness Plans",
+    description: "Curated yoga, meditation, and nutrition plans adapted to your cycle phase."
+  },
+  {
+    icon: <Bell className="w-8 h-8 text-primary" />,
+    title: "Smart Reminders",
+    description: "Gentle nudges for medication, hydration, and appointments so you never miss a beat."
+  }
+];
 
 export const Features: React.FC = () => {
-  const features = [
-    {
-      icon: <CalendarHeart size={32} />,
-      title: "Smart Cycle Tracking",
-      description: "Log your symptoms and let our AI predict your next period, ovulation window, and PMS days with increasing accuracy over time."
-    },
-    {
-      icon: <Activity size={32} />,
-      title: "Health Insights",
-      description: "Discover patterns in your mood, energy, and physical symptoms. Get personalized daily tips to optimize your well-being based on your cycle phase."
-    },
-    {
-      icon: <Users size={32} />,
-      title: "Anonymous Community",
-      description: "Connect with thousands of women in a safe, moderated space. Share experiences, ask questions, and support one another without judgment."
-    },
-    {
-      icon: <ShieldCheck size={32} />,
-      title: "Private & Secure",
-      description: "Your health data belongs to you. We use end-to-end encryption and will never sell your personal information to third parties."
-    }
-  ];
-
   return (
-    <section id="features" className="py-24 bg-white">
-      <div className="container">
+    <section id="features" className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl text-text-main mb-4">Everything you need, all in one place</h2>
-          <p className="text-lg text-text-muted">
-            Woman App is designed to be your daily companion for reproductive health and holistic wellness.
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-textMain">Complete Health Management</h2>
+          <p className="text-textMuted text-lg">
+            Everything you need to understand your body better, designed with scientific precision and care.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <FeatureCard
-              key={index}
-              icon={feature.icon}
-              title={feature.title}
-              description={feature.description}
-              delay={index * 0.1}
-            />
+            <div 
+              key={index} 
+              className="p-8 bg-bgLight rounded-2xl hover:shadow-lg transition-shadow duration-300 border border-gray-100"
+            >
+              <div className="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center mb-6">
+                {feature.icon}
+              </div>
+              <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
+              <p className="text-textMuted leading-relaxed">
+                {feature.description}
+              </p>
+            </div>
           ))}
         </div>
       </div>

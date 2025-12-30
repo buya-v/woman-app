@@ -7,24 +7,24 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#E94E77',
-        secondary: '#7D5BA6',
-        'bg-soft': '#FFF5F7',
-        'text-main': '#2D2D2D',
-        'text-muted': '#666666',
-        white: '#FFFFFF',
+        primary: 'var(--color-primary)',
+        secondary: 'var(--color-secondary)',
+        bgLight: 'var(--color-bg-light)',
+        textMain: 'var(--color-text-main)',
+        textMuted: 'var(--color-text-muted)',
+        white: 'var(--color-white)',
       },
       fontFamily: {
-        serif: ['"Playfair Display"', 'serif'],
         sans: ['Inter', 'sans-serif'],
+        heading: ['Poppins', 'sans-serif'],
       },
-      container: {
-        center: true,
-        padding: '1rem',
-        screens: {
-          lg: '1200px',
-        },
-      },
+      spacing: {
+        'xs': 'var(--space-xs)',
+        's': 'var(--space-s)',
+        'm': 'var(--space-m)',
+        'l': 'var(--space-l)',
+        'xl': 'var(--space-xl)',
+      }
     },
   },
   plugins: [],

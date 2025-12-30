@@ -2,14 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* Color Palette (WCAG AA Compliant) */
+  --color-primary: #8E44AD;
+  --color-secondary: #FF85A2;
+  --color-bg-light: #FAFAFA;
+  --color-text-main: #2D3436;
+  --color-text-muted: #636E72;
+  --color-white: #FFFFFF;
+
+  /* Spacing System (8px Grid) */
+  --space-xs: 8px;
+  --space-s: 16px;
+  --space-m: 32px;
+  --space-l: 64px;
+  --space-xl: 128px;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
   }
   body {
-    @apply text-text-main font-sans antialiased;
+    @apply bg-bgLight text-textMain font-sans antialiased;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif font-bold;
+    @apply font-heading font-bold text-textMain;
   }
+}
+
+/* Utility-first overrides for specific design tokens if needed */
+.btn-primary {
+  @apply bg-primary text-white hover:opacity-90 transition-transform duration-300 hover:scale-105;
 }
